@@ -1,0 +1,16 @@
+class Solution {
+    public int finalValueAfterOperations(String[] operations) {
+        int x =0;
+        for(int y=0;y<operations.length;y++){
+            switch(operations[y]){
+                case("X++"):
+                case("++X"):
+                x++;
+            break;
+                case("X--"):
+                case("--X"):
+                x--;
+            break;
+        }}
+    return x;}
+}
