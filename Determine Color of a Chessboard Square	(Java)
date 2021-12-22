@@ -1,0 +1,40 @@
+class Solution {
+    public boolean squareIsWhite(String coordinates) {
+        char result = coordinates.charAt(0);
+        int y=Character.getNumericValue(coordinates.charAt(1));
+        int first=0;
+        int second=0;
+        switch(result){
+            case 'a': 
+                first=1;
+                break;
+            case 'b': 
+                first=-1;
+                break; 
+            case 'c': 
+                first=1;
+                break;
+            case 'd': 
+                first=-1;
+                break; 
+            case 'e': 
+                first=1;
+                break;
+            case 'f': 
+                first=-1;
+                break;
+            case 'g': 
+                first=1;
+                break;
+            case 'h': 
+                first=-1;
+                break; 
+        }
+        if(y%2==1){
+            second=1;
+        }else{second=-1;}
+        
+    if(first*second>0){
+        return false;
+    }else{return true;}}
+    }
