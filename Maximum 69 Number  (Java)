@@ -1,0 +1,23 @@
+class Solution {
+    public int maximum69Number (int num) {
+        int reverse=0;
+        boolean check=false;
+        int digit=0;
+        int last=0;
+        while(num>0){
+            reverse=reverse*10+num%10;
+            num/=10;
+        }
+        
+        while(reverse>0){
+            digit=reverse%10;
+            if(check==false&&digit==6){
+                digit=9;
+                check=true;
+            }
+            last=(last*10) + digit;
+            reverse = reverse/10;
+        }
+        return last;
+        }
+    }
