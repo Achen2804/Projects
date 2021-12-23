@@ -1,0 +1,51 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+          ArrayList<Character> word1 = new ArrayList<Character>();
+        ArrayList<Character> word2 = new ArrayList<Character>();
+        int x=0;
+        int i=0;
+        ArrayList<Character> maxPrefix = new ArrayList<Character>();
+        ArrayList<Character> prefix = new ArrayList<Character>();
+        if(strs.length==1){
+            for (char c : strs[x].toCharArray()) {
+            word1.add(c);
+            }
+        maxPrefix = new ArrayList<Character>(word1);
+
+        }
+            while(x<strs.length-1){
+                for (char c : strs[x].toCharArray()) {
+            word1.add(c);
+            }
+        for (char c : strs[x+1].toCharArray()) {
+            word2.add(c);
+            }
+            do{
+                if(word1.size()== 0 || word2.size()==0){
+                prefix = new ArrayList<Character>();
+                }
+                else if(word1.get(i) == word2.get(i)){
+                    prefix.add(word1.get(i));
+                }
+             else break;
+
+                i++;
+            }while(i<word1.size() && i<word2.size());
+            i=0;
+            if(prefix.size()<maxPrefix.size() || x==0){  //Makes new Maxprefix
+                    maxPrefix = new ArrayList<Character>(prefix);
+                }
+                
+               
+
+            word1.clear();
+            word2.clear();
+            prefix.clear();
+                x++;
+                
+                }//whileloop1    
+        String word = new String();
+                for(char c:maxPrefix){word= word+ c; }
+        return word;
+    }
+}
