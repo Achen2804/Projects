@@ -1,0 +1,17 @@
+var isPalindrome = function(x) {
+    var number = Array.from(String(x))
+    var counter = 0
+    var condition
+    while(condition = true){
+        if (number[counter]!= number[number.length-1-counter]){
+            condition = false
+            return false
+
+        } 
+        if(counter >number.length/2){
+            condition = false
+            return true
+        }
+        counter++
+    }
+};
