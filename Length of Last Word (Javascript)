@@ -1,0 +1,13 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+ var lengthOfLastWord = function(s) {
+     if(s == null || s == '') return 0; else
+var newArray = s.split(" ");
+var finalArray = newArray.filter(entry => entry.trim() != '');
+var lastWord = finalArray[finalArray.length - 1];
+     if (lastWord != undefined)
+ return lastWord.split('').length;
+     else return 0
+ };
