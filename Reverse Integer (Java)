@@ -1,0 +1,21 @@
+class Solution {
+    public int reverse(int x) {
+        
+        long reverse=0;
+        boolean isNegative=false;
+        if(x<0){
+            isNegative=true;
+            x=-x;
+        }
+            while(x>0){
+                reverse = reverse*10+x%10;
+                x=x/10;
+            }
+        if(isNegative == true){
+            reverse=-reverse;
+        }
+        if ( reverse < -2147483648 || reverse > 2147483647 ) return 0 ;
+        int ans= (int) reverse;
+        return ans;
+    }
+}
