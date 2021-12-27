@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{   
+    int v,d,seconds;
+    float height, distance, timeElpased,theta;
+    timeElpased=0;
+    printf("Enter your launch speed: ");
+    scanf("%d", &v);
+    printf("Enter your launch angle: ");
+    scanf("%f", &theta);
+    printf("Enter your launch height: ");
+    scanf("%d", &d);
+    printf("Time    Distance    Height\n");
+    while(height>0){
+    printf("%.2f    ",timeElpased);
+    distance = v*cos(theta* M_PI / 180.0f)*timeElpased;
+    printf("%.2f    ", distance);
+    height = v*sin(theta* M_PI / 180.0f)*timeElpased - 4.905*pow(timeElpased,2) + d;
+    printf("%.2f\n", height);
+    timeElpased = timeElpased+0.1;
+    }
+}
