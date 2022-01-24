@@ -1,0 +1,10 @@
+class Solution {
+    public int findNumbers(int[] nums) {
+        int counter=0;
+        for(int x:nums){
+            if(String.valueOf(x).length()%2==0){
+                counter++;
+            }
+        }
+    return counter;}
+}
